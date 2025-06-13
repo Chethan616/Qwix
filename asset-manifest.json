@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/web_mini_project/static/css/main.ecbfdad0.css",
-    "main.js": "/web_mini_project/static/js/main.737f0439.js",
-    "static/js/453.c51c4324.chunk.js": "/web_mini_project/static/js/453.c51c4324.chunk.js",
-    "index.html": "/web_mini_project/index.html",
-    "main.ecbfdad0.css.map": "/web_mini_project/static/css/main.ecbfdad0.css.map",
-    "main.737f0439.js.map": "/web_mini_project/static/js/main.737f0439.js.map",
-    "453.c51c4324.chunk.js.map": "/web_mini_project/static/js/453.c51c4324.chunk.js.map"
+    "main.css": "/Qwix/static/css/main.6197888e.css",
+    "main.js": "/Qwix/static/js/main.b0601f43.js",
+    "static/js/453.c51c4324.chunk.js": "/Qwix/static/js/453.c51c4324.chunk.js",
+    "index.html": "/Qwix/index.html",
+    "main.6197888e.css.map": "/Qwix/static/css/main.6197888e.css.map",
+    "main.b0601f43.js.map": "/Qwix/static/js/main.b0601f43.js.map",
+    "453.c51c4324.chunk.js.map": "/Qwix/static/js/453.c51c4324.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.ecbfdad0.css",
-    "static/js/main.737f0439.js"
+    "static/css/main.6197888e.css",
+    "static/js/main.b0601f43.js"
   ]
 }

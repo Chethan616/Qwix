@@ -1,0 +1,138 @@
+/* Thread Card */
+.thread-card {
+    background: white;
+    border-radius: 12px;
+    padding: 20px;
+    margin-bottom: 16px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    transition: all 0.2s ease;
+  }
+  
+  .thread-card:hover {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+  }
+  
+  /* Thread Header */
+  .thread-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 12px;
+  }
+  
+  .user-info {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  
+  .user-avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: #f0f2f5;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #4361ee;
+  }
+  
+  .user-info h4 {
+    margin: 0;
+    font-size: 1rem;
+    font-weight: 600;
+    color: #2b2d42;
+  }
+  
+  .thread-time {
+    font-size: 0.8rem;
+    color: #6c757d;
+  }
+  
+  /* Thread Content */
+  .thread-content {
+    margin-bottom: 16px;
+    line-height: 1.5;
+  }
+  
+  .thread-content p {
+    margin: 0 0 8px 0;
+    color: #2b2d42;
+  }
+  
+  .thread-link {
+    margin-top: 8px;
+  }
+  
+  .thread-link a {
+    color: #4361ee;
+    text-decoration: none;
+    font-size: 0.9rem;
+    word-break: break-all;
+  }
+  
+  .thread-link a:hover {
+    text-decoration: underline;
+  }
+  
+  /* Thread Actions */
+  .thread-actions {
+    display: flex;
+    gap: 12px;
+    border-top: 1px solid #f0f2f5;
+    padding-top: 12px;
+  }
+  
+  .action-btn {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    background: none;
+    border: none;
+    color: #6c757d;
+    font-size: 0.9rem;
+    cursor: pointer;
+    padding: 6px 12px;
+    border-radius: 8px;
+    transition: all 0.2s ease;
+  }
+  
+  .action-btn:hover {
+    background: #f8f9fa;
+    color: #4361ee;
+  }
+  
+  .action-btn.liked {
+    color: #f72585;
+  }
+  
+  .action-btn.liked:hover {
+    background: rgba(247, 37, 133, 0.1);
+  }
+  
+  .action-icon {
+    font-size: 1.1rem;
+  }
+  
+  .action-count, .action-text {
+    font-size: 0.85rem;
+  }
+  
+  /* Empty State */
+  .empty-state {
+    text-align: center;
+    padding: 40px 20px;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  }
+  
+  .empty-state h3 {
+    color: #2b2d42;
+    margin-bottom: 8px;
+  }
+  
+  .empty-state p {
+    color: #6c757d;
+    margin: 0;
+  }

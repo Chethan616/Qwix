@@ -1,0 +1,278 @@
+/* Auth Container */
+
+  
+  /* Auth Card */
+  .auth-card {
+    border-radius: 16px;
+    color: blue;
+    font-family: -apple-system, BlinkMacSystemFont, 'San Francisco', 'Segoe UI', Arial, sans-serif;
+    width: 100%;
+    max-width: 440px;
+    box-shadow: 0 10px 30px rgba(14, 2, 2, 0.08);
+    overflow: visible;
+    padding: 2.5rem;
+    transform-style: preserve-3d;
+  }
+  
+  .auth-card > div > .motion-div, .auth-card > div > div[style*='position: absolute'] {
+    backface-visibility: hidden;
+    transform-style: preserve-3d;
+  }
+  
+  /* Header Styles */
+  .auth-header {
+    text-align: center;
+    margin-bottom: 2rem;
+  }
+  
+  .auth-header h2 {
+    font-size: 1.75rem;
+    color: #2b2d42;
+    margin-bottom: 0.5rem;
+    font-weight: 700;
+    font-family: -apple-system, BlinkMacSystemFont, 'San Francisco', 'Segoe UI', Arial, sans-serif;
+  }
+  
+  .auth-header p {
+    color: #6c757d;
+    font-size: 0.95rem;
+    font-family: -apple-system, BlinkMacSystemFont, 'San Francisco', 'Segoe UI', Arial, sans-serif;
+  }
+  
+  /* Tab Navigation */
+  .auth-tabs {
+    display: flex;
+    border-bottom: 1px solid #e9ecef;
+    margin-bottom: 1.5rem;
+  }
+  
+  .tab-btn {
+    flex: 1;
+    padding: 0.75rem;
+    background: none;
+    border: none;
+    font-size: 1rem;
+    font-weight: 500;
+    color: #6c757d;
+    cursor: pointer;
+    position: relative;
+    transition: all 0.2s ease;
+    font-family: -apple-system, BlinkMacSystemFont, 'San Francisco', 'Segoe UI', Arial, sans-serif;
+  }
+  
+  .tab-btn.active {
+    color: #4361ee;
+    font-weight: 600;
+  }
+  
+  .tab-btn.active::after {
+    content: '';
+    position: absolute;
+    bottom: -1px;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: #4361ee;
+  }
+  
+  .tab-btn:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+  }
+  
+  /* Form Elements */
+  .auth-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+  }
+  
+  .input-group {
+    position: relative;
+    display: flex;
+    align-items: center;
+    border: 1px solid #e9ecef;
+    border-radius: 8px;
+    overflow: hidden;
+    transition: all 0.2s ease;
+  }
+  
+  .input-group:focus-within {
+    border-color: #4361ee;
+    box-shadow: 0 0 0 3px rgba(67, 97, 238, 0.1);
+  }
+  
+  .input-icon {
+    position: absolute;
+    left: 14px;
+    color: #6c757d;
+    font-size: 1.1rem;
+  }
+  
+  .input-group input {
+    width: 100%;
+    padding: 0.75rem 1rem 0.75rem 40px;
+    border: none;
+    outline: none;
+    font-size: 0.95rem;
+    background: transparent;
+    font-family: -apple-system, BlinkMacSystemFont, 'San Francisco', 'Segoe UI', Arial, sans-serif;
+  }
+  
+  .input-group input:disabled {
+    background-color: #f8f9fa;
+  }
+  
+  .password-toggle {
+    position: absolute;
+    right: 12px;
+    background: none;
+    border: none;
+    color: #6c757d;
+    font-size: 1.1rem;
+    cursor: pointer;
+    padding: 4px;
+  }
+  
+  .password-toggle:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+  }
+  
+  .forgot-password {
+    text-align: right;
+    margin-top: -0.5rem;
+  }
+  
+  .forgot-password a {
+    color: #6c757d;
+    font-size: 0.85rem;
+    text-decoration: none;
+    transition: color 0.2s ease;
+  }
+  
+  .forgot-password a:hover {
+    color: #4361ee;
+  }
+  
+  /* Buttons */
+  .auth-submit {
+    background: #007AFF !important;
+    color: #fff !important;
+    border: none;
+    padding: 0.85rem;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.75rem;
+    transition: background 0.2s;
+    font-family: -apple-system, BlinkMacSystemFont, 'San Francisco', 'Segoe UI', Arial, sans-serif;
+  }
+  
+  .auth-submit:hover:not(:disabled) {
+    background: #005BBB !important;
+  }
+  
+  .auth-submit:disabled {
+    background: #a5b4fc;
+    cursor: not-allowed;
+    opacity: 0.8;
+  }
+  
+  .google-auth {
+    background: white;
+    color: #2b2d42;
+    border: 1px solid #e9ecef;
+    padding: 0.85rem;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.75rem;
+    transition: all 0.2s ease;
+    font-family: -apple-system, BlinkMacSystemFont, 'San Francisco', 'Segoe UI', Arial, sans-serif;
+  }
+  
+  .google-auth:hover:not(:disabled) {
+    background: #f8f9fa;
+    border-color: #dee2e6;
+  }
+  
+  .google-auth:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
+  }
+  
+  /* Divider */
+  .divider {
+    position: relative;
+    text-align: center;
+    margin: 1rem 0;
+  }
+  
+  .divider::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: #e9ecef;
+    z-index: 1;
+  }
+  
+  .divider span {
+    position: relative;
+    z-index: 2;
+    background: white;
+    padding: 0 1rem;
+    color: #6c757d;
+    font-size: 0.85rem;
+    font-family: -apple-system, BlinkMacSystemFont, 'San Francisco', 'Segoe UI', Arial, sans-serif;
+  }
+  
+  /* Footer Links */
+  .auth-footer {
+    text-align: center;
+    margin-top: 1.5rem;
+    font-size: 0.9rem;
+    color: #6c757d;
+  }
+  
+  .auth-footer button {
+    background: none;
+    border: none;
+    color: #007AFF !important;
+    font-weight: 500;
+    cursor: pointer;
+    padding: 0;
+    font-size: inherit;
+    font-family: -apple-system, BlinkMacSystemFont, 'San Francisco', 'Segoe UI', Arial, sans-serif;
+  }
+  
+  .auth-footer button:hover:not(:disabled) {
+    text-decoration: underline;
+  }
+  
+  .auth-footer button:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 480px) {
+    .auth-card {
+      padding: 1.5rem;
+    }
+    
+    .auth-container {
+      padding: 1rem;
+    }
+  }

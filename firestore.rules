@@ -1,0 +1,70 @@
+rules_version = '2';
+
+service cloud.firestore {
+  match /databases/{database}/documents {
+    // Helper functions
+    function isAuthenticated() {
+      return request.auth != null;
+    }
+    
+    function isOwner(userId) {
+      return isAuthenticated() && request.auth.uid == userId;
+    }
+
+    function isUpdatingLikesOrReplies() {
+      return isAuthenticated() && (
+        request.resource.data.diff(resource.data).affectedKeys().hasOnly(['likes']) ||
+        request.resource.data.diff(resource.data).affectedKeys().hasOnly(['replies']) ||
+        request.resource.data.diff(resource.data).affectedKeys().hasAll(['likes', 'replies'])
+      );
+    }
+
+    // Users collection
+    match /users/{userId} {
+      allow read: if isAuthenticated();
+      allow write: if isOwner(userId);
+    }
+
+    // Threads collection
+    match /threads/{threadId} {
+      allow read: if isAuthenticated();
+      allow create: if isAuthenticated();
+      allow update: if isAuthenticated() && (
+        // Allow any authenticated user to update likes and replies
+        isUpdatingLikesOrReplies() ||
+        // Allow thread owner or community moderators to update other fields
+        resource.data.userId == request.auth.uid ||
+        (resource.data.communityId != null && 
+         get(/databases/$(database)/documents/communities/$(resource.data.communityId)).data.moderators.hasAny([request.auth.uid]))
+      );
+      allow delete: if isAuthenticated() && (
+        resource.data.userId == request.auth.uid ||
+        (resource.data.communityId != null && 
+         get(/databases/$(database)/documents/communities/$(resource.data.communityId)).data.moderators.hasAny([request.auth.uid]))
+      );
+    }
+
+    // Communities collection
+    match /communities/{communityId} {
+      allow read: if isAuthenticated();
+      allow create: if isAuthenticated();
+      allow update: if isAuthenticated() && (
+        // Allow users to join/leave communities
+        (request.resource.data.diff(resource.data).affectedKeys().hasOnly(['members']) ||
+         request.resource.data.diff(resource.data).affectedKeys().hasOnly(['threadCount']) ||
+         request.resource.data.diff(resource.data).affectedKeys().hasOnly(['members', 'threadCount'])) ||
+        // Allow updates by owner or moderators
+        (resource.data.ownerId == request.auth.uid || 
+         resource.data.moderators.hasAny([request.auth.uid]))
+      );
+      allow delete: if isAuthenticated() && resource.data.ownerId == request.auth.uid;
+    }
+
+    // Notifications collection
+    match /notifications/{notificationId} {
+      allow read: if isAuthenticated() && resource.data.userId == request.auth.uid;
+      allow create: if isAuthenticated();
+      allow update, delete: if isAuthenticated() && resource.data.userId == request.auth.uid;
+    }
+  }
+} 

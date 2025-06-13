@@ -1,0 +1,75 @@
+.create-thread {
+    background: white;
+    border-radius: 12px;
+    padding: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  }
+  
+  .form-group {
+    margin-bottom: 12px;
+  }
+  
+  .form-group textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #e9ecef;
+    border-radius: 8px;
+    font-size: 0.95rem;
+    resize: vertical;
+    min-height: 100px;
+  }
+  
+  .form-group textarea:focus {
+    outline: none;
+    border-color: #4361ee;
+    box-shadow: 0 0 0 3px rgba(67, 97, 238, 0.1);
+  }
+  
+  .link-input {
+    position: relative;
+  }
+  
+  .link-icon {
+    position: absolute;
+    left: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #6c757d;
+  }
+  
+  .link-input input {
+    width: 100%;
+    padding: 10px 10px 10px 36px;
+    border: 1px solid #e9ecef;
+    border-radius: 8px;
+    font-size: 0.9rem;
+  }
+  
+  .link-input input:focus {
+    outline: none;
+    border-color: #4361ee;
+  }
+  
+  .submit-btn {
+    background: #4361ee;
+    color: white;
+    border: none;
+    padding: 10px 16px;
+    border-radius: 8px;
+    font-size: 0.95rem;
+    font-weight: 500;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: background 0.2s ease;
+  }
+  
+  .submit-btn:hover {
+    background: #3a56d4;
+  }
+  
+  .btn-icon {
+    font-size: 1.1rem;
+  }

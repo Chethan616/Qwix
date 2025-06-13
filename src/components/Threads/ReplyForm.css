@@ -1,0 +1,73 @@
+/* Reply Form */
+.reply-form-container {
+    margin-top: 16px;
+    padding: 16px;
+    background: #f8f9fa;
+    border-radius: 12px;
+  }
+  
+  .reply-form {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+  
+  .reply-textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #e9ecef;
+    border-radius: 12px;
+    font-size: 0.95rem;
+    resize: vertical;
+    min-height: 80px;
+    outline: none;
+    transition: all 0.2s ease;
+  }
+  
+  .reply-textarea:focus {
+    border-color: #4361ee;
+    box-shadow: 0 0 0 3px rgba(67, 97, 238, 0.1);
+  }
+  
+  .reply-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 8px;
+  }
+  
+  .reply-submit-btn, .reply-cancel-btn {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s ease;
+  }
+  
+  .reply-submit-btn {
+    background: #4361ee;
+    color: white;
+    border: none;
+  }
+  
+  .reply-submit-btn:disabled {
+    background: #a5b4fc;
+    cursor: not-allowed;
+  }
+  
+  .reply-submit-btn:hover:not(:disabled) {
+    background: #3a56d4;
+  }
+  
+  .reply-cancel-btn {
+    background: #f8f9fa;
+    color: #6c757d;
+    border: 1px solid #e9ecef;
+  }
+  
+  .reply-cancel-btn:hover {
+    background: #e9ecef;
+  }
